@@ -101,7 +101,6 @@ export default {
       isLoading: false
     })
 
-    console.log(store.Global.isLoading, state.isLoading)
     watch(() => store.User.currentUser, () => {
       if (!store.Global.isLoading && !store.User.currentUser.apiKey) {
         handleError(true)
@@ -136,7 +135,6 @@ export default {
       }
     }
 
-    console.log(store.Global.isLoading, state.isLoading)
     return {
       state,
       store,
