@@ -73,7 +73,7 @@
           class="px-8 py-3 mt-10 text-2x1 font-bold text-white rounded-full bg-brand-main focus:outline-none transition-all duration-150"
         >
           <icon v-if="state.isLoading" name="loading" class="animate-spin" />
-          <span v-else>Entrar</span>
+          <span v-else>Salvar</span>
         </button>
       </label>
     </form>
@@ -146,7 +146,7 @@ export default {
       try {
         toast.clear()
         state.isLoading = true
-        const { errors } = await services.auth.create({
+        const { errors } = await services.auth.register({
           name: state.name.value,
           email: state.email.value,
           password: state.password.value
